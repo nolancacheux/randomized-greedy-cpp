@@ -1,34 +1,86 @@
-# C++ - Algorithmique Avancée - Algorithmes Gloutons Randomisés
+# Randomized Greedy Algorithms in C++
 
-Ce README.md présente les grandes lignes d'un TP sur les algorithmes gloutons randomisés en C++, réalisé en groupe de 4 personnes. Pour une compréhension plus détaillée et des instructions d'exécution, consultez les dossiers de chaque question. Le rapport complet est disponible dans le repository, à la racine du projet.
-## Objectifs du TP
+A comprehensive implementation of randomized greedy algorithms for solving classic optimization problems including the Knapsack Problem and Traveling Salesman Problem (TSP).
 
-1. Comprendre la puissance des algorithmes randomisés répliqués.
-2. Résoudre deux problèmes d'optimisation dans un problème global.
-3. Intégrer différentes situations (entrées du problème) à partir de fichiers.
-4. Manipuler des graines de générateur de nombres pseudo-aléatoires pour obtenir des solutions différentes.
-5. Accorder une grande liberté sur les différents choix (structures de données et choix algorithmiques).
+## Overview
 
+This project demonstrates the power of randomized algorithms through practical implementations of two fundamental optimization problems:
 
-## Problèmes à résoudre
+- **Knapsack Problem (P1)**: Optimize item selection to maximize profit within capacity constraints
+- **Traveling Salesman Problem (P2)**: Find the shortest route visiting all cities exactly once
 
-1. Problème du sac à dos (P1) : sélection de produits pour optimiser le bénéfice.
-2. Problème du voyageur de commerce (P2) : construction d'une tournée optimisée en passant par toutes les villes.
+## Key Features
 
-## Données d'entrée
+- **Randomized Greedy Algorithms**: Smart probabilistic selection for better solution quality
+- **Algorithm Replication**: Multiple runs with different random seeds to improve solution quality
+- **File-based Input**: Flexible data loading from text files
+- **Modular Design**: Clean separation of concerns with structured data types
+- **Educational Framework**: Progressive implementation through guided exercises (Q1-Q12 + Bonus)
 
-Les données d'entrée sont fournies par des fichiers texte pour les deux problèmes. Les fichiers devront être lus pour remplir les structures de données appropriées.
+## Building and Running
 
-## Techniques algorithmiques
+Each question directory contains its own CMakeLists.txt for individual compilation:
 
-1. Algorithmes gloutons : construire une solution élément par élément sans revenir sur les choix précédents.
-2. Algorithmes gloutons randomisés : choisir aléatoirement des éléments à intégrer à la solution à partir d'un ensemble de candidats.
-3. Réplications d'algorithmes gloutons randomisés : exécuter plusieurs fois l'algorithme pour obtenir différentes solutions et augmenter les chances de trouver une solution optimale.
+```bash
+cd TP/Q10
+mkdir build && cd build
+cmake ..
+make
+./Q10
+```
 
-## Réalisation
+## Algorithms Implemented
 
-Le TP est découpé en plusieurs questions (Q1 à Q12 + Bonus) pour guider la réalisation du code et la réflexion sur les algorithmes et les structures de données. Les détails se trouvent dans les dossiers de chaque question.
+### Greedy Algorithms
+- Traditional greedy approach for quick solutions
+- Element-by-element construction without backtracking
 
-## Remarques
+### Randomized Greedy
+- Probabilistic candidate selection from feasible sets
+- Multiple solution attempts with different random seeds
+- Improved solution quality through randomization
 
-N'oubliez pas de consulter les dossiers de chaque question pour obtenir des explications détaillées et des instructions d'exécution.
+### Optimization Techniques
+- Algorithm replication for solution quality improvement
+- Seed management for reproducible randomness
+- Performance comparison between deterministic and randomized approaches
+
+## Input Format
+
+The algorithms accept input from text files:
+
+**Knapsack Problem:**
+```
+capacity
+num_items
+item1_weight item1_value
+item2_weight item2_value
+...
+```
+
+**TSP:**
+```
+num_cities
+city_names
+distance_matrix
+```
+
+## Educational Objectives
+
+1. Understanding the power of replicated randomized algorithms
+2. Solving dual optimization problems in a unified framework
+3. File-based problem instance integration
+4. Random seed manipulation for solution diversity
+5. Flexible implementation with various data structures and algorithmic choices
+
+## Requirements
+
+- C++11 or higher
+- CMake 3.10+
+- Standard C++ libraries (iostream, fstream, vector, random)
+
+## Documentation
+
+For detailed implementation instructions and explanations, refer to the individual question directories. The complete project report is available as `Equipe19CIR2RapportTP.pdf`.
+
+Nolan CACHEUX
